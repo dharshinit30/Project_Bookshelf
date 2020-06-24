@@ -75,11 +75,13 @@ public class TestValidData extends ExtentReport {
 		if((search_product.equalsIgnoreCase("Bookshelf")|| search_product.equalsIgnoreCase("Bookshelves")) && Search_price.equalsIgnoreCase("15000") && Search_type.equalsIgnoreCase("Open")) 
 		{
 			
-			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
                          
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 
 			bookshelf.clearpage();	
+			
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 			//Criterias to be searched
 
@@ -93,9 +95,9 @@ public class TestValidData extends ExtentReport {
 			
 			//waits for 30 seconds to load the page
 			
-			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); 
 			
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 
 			//prints the name and price of first three bookshelves displayed in the navigated page			
 			
