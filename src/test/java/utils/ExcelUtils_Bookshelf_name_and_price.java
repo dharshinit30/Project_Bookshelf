@@ -16,6 +16,8 @@ public class ExcelUtils_Bookshelf_name_and_price {
 	public static String path = System.getProperty("user.dir") + "\\testdata.xls";
 	public static String Chrome_result = System.getProperty("user.dir") + "\\testresult_chrome.xls";
 	public static String Firefox_result = System.getProperty("user.dir") + "\\testresult_firefox.xls";
+	
+	public static int counter = 0;
 
 	public static String[][] readExcelData(String sheetName) throws Exception
 	{
@@ -70,7 +72,12 @@ public class ExcelUtils_Bookshelf_name_and_price {
 		FileInputStream files = new FileInputStream(new File(path));
 		HSSFWorkbook wb = new HSSFWorkbook(files);
 		HSSFSheet sheet = wb.getSheet("testresult");
-		int rownum = 0;
+		int rownum;
+		
+		if(counter == 0)
+			rownum = 0;
+		else
+			rownum = sheet.getLastRowNum() + 2;
 		//System.out.println(rownum);
 		HSSFRow row;
 		HSSFCell cell;
