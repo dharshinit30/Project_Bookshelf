@@ -75,7 +75,10 @@ public class ExcelUtils_Bookshelf_name_and_price {
 		int rownum;
 		
 		if(counter == 0)
+		{
 			rownum = 0;
+			counter++;
+		}
 		else
 			rownum = sheet.getLastRowNum() + 2;
 		//System.out.println(rownum);
